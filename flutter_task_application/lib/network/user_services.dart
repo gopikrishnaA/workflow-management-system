@@ -10,6 +10,7 @@ import 'package:flutter_task_application/store/shared_pref.dart';
 import 'package:flutter_task_application/utils/utils.dart';
 import 'package:flutter_task_application/view%20model/controller/signin_controller.dart';
 import 'package:flutter_task_application/view%20model/controller/signup_controller.dart';
+import 'package:flutter_task_application/view/homePage/homepage.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
@@ -43,7 +44,7 @@ class UserServices {
         UserPref.setUser(
             res.username, res.email, role, res.accessToken, res.id);
         if (role == 'ROLE_MANAGER') {
-          Get.toNamed(Routes.homePage);
+          Get.off(const Homepage());
         }
         if (role == 'ROLE_EMPLOYEE') {
           Get.toNamed(Routes.employeePage);

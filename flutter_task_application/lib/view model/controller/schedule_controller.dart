@@ -23,6 +23,7 @@ class ScheduleController extends GetxController {
   RxString fromDate = ''.obs;
   RxString toTime = ''.obs;
   RxString toDate = ''.obs;
+  RxBool isOpen = false.obs;
   final message = TextEditingController().obs;
   final title = TextEditingController().obs;
 
@@ -45,6 +46,10 @@ class ScheduleController extends GetxController {
 
   void setLoading(bool value) {
     loading.value = value;
+  }
+
+  void setOpen(bool value) {
+    isOpen.value = value;
   }
 
   void setSelectedItem(Schedules? item) {

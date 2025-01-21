@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_task_application/res/app_color.dart';
-import 'package:flutter_task_application/res/assets/app_icons.dart';
+// import 'package:flutter_task_application/res/assets/app_icons.dart';
 import 'package:flutter_task_application/res/routes/routes.dart';
 import 'package:flutter_task_application/view%20model/controller/home_controller.dart';
 import 'package:flutter_task_application/view%20model/controller/schedule_controller.dart';
@@ -101,6 +101,7 @@ class _MyHomePageState extends State<Homepage> {
           ],
         ),
         body: SafeArea(
+            child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -113,11 +114,16 @@ class _MyHomePageState extends State<Homepage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     IconButton(
-                      icon: SvgPicture.asset(
-                        AppIcon.menu,
-                        color: Colors.white,
-                        height: 30,
-                        width: 30,
+                      // icon: SvgPicture.asset(
+                      //   AppIcon.menu,
+                      //   color: Colors.white,
+                      //   height: 30,
+                      //   width: 30,
+                      // ),
+                      icon: const Icon(
+                        Icons.menu,
+                        color: Colors.white70,
+                        size: 30,
                       ),
                       onPressed: _openDrawer,
                     ),
@@ -163,18 +169,19 @@ class _MyHomePageState extends State<Homepage> {
                 ),
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height - 80,
+                height: MediaQuery.of(context).size.height - 100,
                 child: _widgetOptions[_selectedIndex],
               ),
             ],
           ),
-        ),
+        )),
         drawer: Drawer(
             child: Column(children: <Widget>[
           const SizedBox(
-              height: 64.0,
+              height: 80.0,
               width: double.infinity,
               child: DrawerHeader(
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 decoration: BoxDecoration(
                   color: Colors.pink,
                 ),

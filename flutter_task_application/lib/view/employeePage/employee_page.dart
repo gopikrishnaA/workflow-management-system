@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_task_application/res/app_color.dart';
-import 'package:flutter_task_application/res/assets/app_icons.dart';
+// import 'package:flutter_task_application/res/assets/app_icons.dart';
 import 'package:flutter_task_application/view%20model/controller/home_controller.dart';
 import 'package:flutter_task_application/view%20model/controller/schedule_controller.dart';
 import 'package:flutter_task_application/view/common%20widgets/back_button.dart';
@@ -48,6 +48,7 @@ class _MyHomePageState extends State<EmployeePage> {
         key: _scaffoldKey,
         backgroundColor: black,
         body: SafeArea(
+            child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -60,11 +61,16 @@ class _MyHomePageState extends State<EmployeePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     IconButton(
-                      icon: SvgPicture.asset(
-                        AppIcon.menu,
-                        color: Colors.white,
-                        height: 30,
-                        width: 30,
+                      // icon: SvgPicture.asset(
+                      //   AppIcon.menu,
+                      //   color: Colors.white,
+                      //   height: 30,
+                      //   width: 30,
+                      // ),
+                      icon: const Icon(
+                        Icons.menu,
+                        color: Colors.white70,
+                        size: 30,
                       ),
                       onPressed: _openDrawer,
                     ),
@@ -115,7 +121,7 @@ class _MyHomePageState extends State<EmployeePage> {
               ),
             ],
           ),
-        ),
+        )),
         drawer: Drawer(
             child: Column(children: <Widget>[
           const SizedBox(

@@ -1,5 +1,5 @@
 class Endpoints {
-  static const baseUrl = 'http://localhost:8001';
+  static const baseUrl = 'http://localhost:8001'; // 'http://10.0.2.2:8001';
   static const signIn = '$baseUrl/auth/signin';
   static const signUp = '$baseUrl/auth/signup';
   static const createSchedule = '$baseUrl/createSchedule';
